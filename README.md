@@ -31,20 +31,28 @@ Max Price: Capturing extreme values within each window.
 This visualization effectively shows the fluctuations in crude oil prices over time while providing localized trends that help spot short-term variations.
 
 Challenges Encountered
+
+
 Index Management:
 Initially, the code assumed that DATE was a separate column, but the dataset had DATE as the index. This required updating the logic to work directly with the index.
 Data Formatting:
 Non-numeric values and missing data in DCOILWTICO were handled using pd.to_numeric and dropna() to ensure clean data for calculations.
 Adjusting Window Logic:
 Proper handling of start and end indices for window computations to ensure no out-of-range errors.
+
+
 Outputs and Deliverables
 Hopping Window DataFrame:
 A table showing the start date, mean price, and max price for each window.
 This table was saved as a CSV file (hopping_window_results.csv) for further use.
+
+
 Visualization:
 A plot comparing the hopping window mean and max prices over time.
 Insights and Use Cases
 Local Trends: The hopping window approach reveals short-term trends that are not visible in broader aggregations like weekly or monthly statistics.
 Extreme Values: Tracking maximum prices helps identify price spikes or unusual market conditions.
 Dynamic Analysis: This method is ideal for applications requiring localized trend analysis, such as financial forecasting or anomaly detection.
+
+
 In conclusion, the hopping window implementation provided valuable insights into crude oil price trends while addressing practical challenges in data preprocessing and visualization. The resulting CSV and plots serve as actionable resources for further analysis or reporting.
